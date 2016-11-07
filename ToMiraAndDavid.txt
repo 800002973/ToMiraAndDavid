@@ -1,0 +1,50 @@
+/**
+ * Determines the number of gems needed to uncover a common, uncommon, and rare gem per simulation.
+ * 
+ * Brian Chap
+ * v0.0
+ */
+public class RandGenerator
+{
+    private boolean David;
+    private boolean Mira;
+    private boolean Brian;
+    private double Rod;
+    private int counter;
+    private int KociHomework;
+    /**
+     * My code
+     */
+    public RandGenerator()
+    {
+        David = false;
+        Mira = false;
+        Brian = false;
+        counter = 0;
+        KociHomework = 0;
+        for (int i = 0; i < 5000; i++) {
+            while (KociHomework < 3) {
+                Rod = Math.floor(Math.random() * 6) + 1;
+                counter++;
+                if (David == false && Rod < 4) {
+                    David = true;
+                    KociHomework++;
+                }
+                else if (Mira == false && Rod < 6) {
+                    Mira = true;
+                    KociHomework++;
+                }
+                else if (Brian == false && Rod == 6) {
+                    Brian = true;
+                    KociHomework++;
+                }
+            }
+            System.out.println("" + counter);
+            David = false;
+            Mira = false;
+            Brian = false;
+            counter = 0;
+            KociHomework = 0;
+        }
+    }
+}
